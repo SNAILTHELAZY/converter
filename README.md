@@ -9,6 +9,20 @@ This project inspired by idea from [Free Code Camp](https://medium.com/free-code
 - Octal
 - Roman
 
+## Progress
+- [x] build the UI
+- [x] able to select the numbering system of the input
+- [ ] error checking of the input with the constraints of the selected numbering system
+- [x] able to convert input into binary
+- [x] able to convert input into octal
+- [x] able to convert input into decimal
+- [x] able to convert input into hexadecimal
+- [ ] able to convert input into roman numbering system
+
+## Features
+- [ ] changing theme between light and night
+- [ ] able to output the result when key up
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
