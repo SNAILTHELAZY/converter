@@ -23,6 +23,9 @@ This project inspired by idea from [Free Code Camp](https://medium.com/free-code
 - [ ] changing theme between light and night
 - [ ] able to output the result when key up
 
+## License
+License has been included [here](./LICENSE)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
