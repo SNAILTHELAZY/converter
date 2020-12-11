@@ -1,0 +1,37 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Auto Deploy to GitHub Page
+
+# Controls when the action will run. 
+on: 
+  push:
+    branches: 
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: unbuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+        
+      - name: Prepare and deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm install
+          npm run lint
+          ###
+          # Configure Angular first
+          ####
+          # npm test -- --watch=false --progress=false --browser=ChromeHeadlessCI
+          # npm run webdriver-update-ci
+          # npm run e2e -- -- protractor-config=e2e/protractor-ci.conf.js --webdriver-update=false
+          ####
+          npm run ng -- deploy --base-href=/numbering-system-converter/ --name="SNAILTHELAZY" --email=player3755@gmail.com
