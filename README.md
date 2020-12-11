@@ -1,4 +1,4 @@
-# NumberingSystemConverter
+# Numbering System Converter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
@@ -17,7 +17,7 @@ This project inspired by idea from [Free Code Camp](https://medium.com/free-code
 - [x] able to convert input into octal
 - [x] able to convert input into decimal
 - [x] able to convert input into hexadecimal
-- [ ] able to convert input into roman numbering system
+- [x] able to convert input into roman numbering system
 
 ## Features
 - [ ] changing theme between light and night
