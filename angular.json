@@ -118,8 +118,13 @@
               "devServerTarget": "numbering-system-converter:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "numbering-system-converter"
 }
