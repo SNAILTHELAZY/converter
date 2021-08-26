@@ -1,45 +1,16 @@
-<div class="card" style="width:80%;margin:5% auto">
-  <div class="card-body">
-    <h5 class="card-title">Numbering System Converter</h5>
-    <form [formGroup]="fg">
-      <label class="form-label">Input:</label>
-      <div class="input-group">
-        <input formControlName="input" type="text" class="form-control" (change)="onInputChange($event.target.value)">
-        <select class="form-select" formControlName="numberingSystem" (change)="onInputSystemChange($event.target.value)">
-          <option *ngFor="let n of numberingSystem">{{n}}</option>
-        </select>
-      </div>
-    </form>
-    <hr/>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Numbering System</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Binary</td>
-          <td>{{binary}}</td>
-        </tr>
-        <tr>
-          <td>Decimal</td>
-          <td>{{decimal}}</td>
-        </tr>
-        <tr>
-          <td>Octal</td>
-          <td>{{octal}}</td>
-        </tr>
-        <tr>
-          <td>Hexadecimal</td>
-          <td>{{hexadecimal}}</td>
-        </tr>
-        <tr>
-          <td>Roman</td>
-          <td>{{roman}}</td>
-        </tr>
-      </tbody>
-    </table>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">{{title}}</a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed=!isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="numbering-system-converter">Numbering System Converter</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
+<router-outlet></router-outlet>

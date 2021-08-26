@@ -1,0 +1,46 @@
+<div class="card" style="width:80%;margin:5% auto">
+    <div class="card-body">
+      <h5 class="card-title">Numbering System Converter</h5>
+      <form [formGroup]="fg">
+        <label class="form-label">Input:</label>
+        <div class="input-group">
+          <input formControlName="input" type="text" class="form-control" (change)="onInputChange($event.target.value)">
+          <select class="form-select" formControlName="numberingSystem" (change)="onInputSystemChange($event.target.value)">
+            <option *ngFor="let n of numberingSystem">{{n}}</option>
+          </select>
+        </div>
+        <ngb-alert [type]="'danger'" *ngIf="myError.reason!=''" [dismissible]=false>{{myError.reason}}</ngb-alert>
+      </form>
+      <hr/>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Numbering System</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Binary</td>
+            <td>{{numberSystemInterface.binary}}</td>
+          </tr>
+          <tr>
+            <td>Decimal</td>
+            <td>{{numberSystemInterface.decimal}}</td>
+          </tr>
+          <tr>
+            <td>Octal</td>
+            <td>{{numberSystemInterface.octal}}</td>
+          </tr>
+          <tr>
+            <td>Hexadecimal</td>
+            <td>{{numberSystemInterface.hexadecimal}}</td>
+          </tr>
+          <tr>
+            <td>Roman</td>
+            <td>{{numberSystemInterface.roman}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
