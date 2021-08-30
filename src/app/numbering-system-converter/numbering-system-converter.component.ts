@@ -42,49 +42,53 @@ export class NumberingSystemConverterComponent implements OnInit {
     var input=value;
     if(input!=stringify(0) || input!=null){
       var from='';
+      //console.log(value.match('/^[01]+$/')===null);
+      
       switch(this.selectedNumberingSystem){
         case 'Binary':
-          if(!value.match('[10]')){
+          if(value.match(/^[01]+$/)===null){
             this.myError.reason='the input value should only include 1 or 0!';
           }else{
             this.myError.reason='';
+            from='b';
           }
-          from='b';
           break;
         case 'Octal':
-          if(!value.match('[0-7]')){
+          if(value.match(/^[1-7][0-7]*$/)===null){
             this.myError.reason='only 0 - 7 is allowed for this numbering system!'
           }else{
             this.myError.reason='';
+            from='o';
           }
-          from='o';
+          
           break;
         case 'Decimal':
-          if(!value.match('\d')){
+          if(value.match(/\d/)===null){
             this.myError.reason='only 0-9 is allowed'
           }else{
             this.myError.reason='';
+            from='d';
           }
-          from='d';
           break;
         case 'Hexadecimal':
-          if(!value.match('[a-fA-F0-9]')){
+          if(value.match(/^[\da-f]+$/)===null){
             this.myError.reason='this is not allowed'
           }else{
             this.myError.reason='';
+            from='h';
           }
-          from='h';
           break;
         case 'Roman':
-          if(value.match('\d')){
+          if(value.match(/^M(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/)===null){
             this.myError.reason='no numbers are allowed'
           }else{
             this.myError.reason='';
+            from='r';
           }
-          from='r';
           break;
       }
-      if(this.myError.reason==''){
+      
+      if(this.myError.reason=='' && from!=''){
         this.numberSystemInterface=this.numberConverter.convert(value,from);
       }
     }else{

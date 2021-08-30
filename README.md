@@ -9,10 +9,14 @@ This project inspired by idea from [Free Code Camp](https://medium.com/free-code
 - Octal
 - Roman
 
+## Update 2021.08.30
+Now this web is going to add more converter features, including convert values in length units, weight and memory size.
+
 ## Progress
+### Numbering System Converter
 - [x] build the UI
 - [x] able to select the numbering system of the input
-- [ ] error checking of the input with the constraints of the selected numbering system
+- [x] error checking of the input with the constraints of the selected numbering system
 - [x] able to convert input into binary
 - [x] able to convert input into octal
 - [x] able to convert input into decimal

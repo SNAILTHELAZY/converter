@@ -7,7 +7,7 @@ import { Component,OnInit } from '@angular/core';
 })
 export class AppComponent {
   
-  title = 'converter';
+  title = 'Converter';
   isCollapsed:boolean=true;
 
   constructor(){
